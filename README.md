@@ -22,11 +22,13 @@ Github link: https://github.com/FooJiaYin/NTHUCS-crosscheck-crawler
 
 ## 使用步驟
 1. 雙點`userconfig.csv`，用excel打開。設定檔案名稱、組別名稱和鏈接。
-    - 第一行是輸出的檔案名稱（不含`.xlsx`）
+    - 第一行是輸出的檔案名稱（不含`.xlsx`）。預設為`result.xlsx`。
     - 接下來幾行，左邊是組別名稱，右邊是對應的網址
     - 可以自行修改/增加
 
-2. 雙點`crawler.bat`，程式會開始執行。請耐心等待幾秒。
+2. 雙點`crawler.bat`，程式會開始執行。
+
+3. 耐心等待幾秒後，文件夾會出現excel檔，名稱如同`userconfig.csv`中所設定。
 
 ## 注意事項
 - 考生姓名尚未登記在榜上，因此程式沒有加入考生姓名，日後如要更新考生姓名，請聯絡我進行修改。

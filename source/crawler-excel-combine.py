@@ -4,8 +4,6 @@ import csv
 import lxml
 import pandas as pd
 
-filename = "result-1"
-
 with open("./userconfig.csv", newline='', encoding='utf-8-sig') as inputfile:
     reader = csv.reader(inputfile)
     filename = next(reader)[0]
