@@ -34,7 +34,11 @@ with open("./userconfig.csv", newline='', encoding='utf-8-sig') as inputfile:
                 for cell in table.findAll('td'):
                     for link in cell.findAll("a"):
                         if(link.text != "" and link.text != "\n"):
-                            data[i].append(link.text) # Add to each row
+                            text = link.text
+                            date = link.findNext("div", class_='retestdate').text.replace(' ', '')
+                            if date[0] != '-':
+                                text = link.text + '-' + date
+                            data[i].append(text) # Add to each row
                 i += 1 # Go to the next row
 
             """ Add header """

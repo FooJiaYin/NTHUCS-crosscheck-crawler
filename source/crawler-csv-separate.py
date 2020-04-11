@@ -15,7 +15,7 @@ soup = BeautifulSoup(res.text, "lxml")
 """ Retrieve Candidate Info """
 data = []
 for link in soup.findAll("a"):
-    if("考區 : " in link.text): 
+    if "考區 : " in link.text: 
         # Split candidate id and 考區
         text = link.parent.text.replace('\n', '').replace(' ', '').split('考區:')
         text.append('') 
@@ -28,8 +28,12 @@ i = 0
 for table in tables[3:]:
     for cell in table.findAll('td'):
         for link in cell.findAll("a"):
-            if(link.text != "" and link.text != "\n"):
-                data[i].append(link.text) # Add to each row
+            if link.text != "" and link.text != "\n":
+                text = link.text
+                date = link.findNext("div", class_='retestdate').text.replace(' ', '')
+                if date[0] != '-':
+                    text = link.text + '-' + date
+                data[i].append(text) # Add to each row
     i += 1 # Go to the next row
 
 """ Add header """
