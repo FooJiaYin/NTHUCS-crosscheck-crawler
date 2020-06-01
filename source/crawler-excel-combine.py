@@ -4,7 +4,7 @@ import csv
 import lxml
 import pandas as pd
 
-with open("./userconfig.csv", newline='', encoding='utf-8-sig') as inputfile:
+with open("./phase1-config.csv", newline='', encoding='utf-8-sig') as inputfile:
     reader = csv.reader(inputfile)
     filename = next(reader)[0]
     with pd.ExcelWriter('./' + filename + '.xlsx', mode='w') as writer:
